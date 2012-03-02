@@ -21,6 +21,17 @@
         "sensio/generator-bundle": "2.0.*"
     },
 
+    "scripts": {
+        "post-install-cmd": [
+            "Knp\\Bundle\\RadBundle\\Composer\\ScriptHandler::configs",
+            "Knp\\Bundle\\RadBundle\\Composer\\ScriptHandler::clearCache",
+            "Knp\\Bundle\\RadBundle\\Composer\\ScriptHandler::installAssets"
+        ],
+        "post-update-cmd": [
+            "Knp\\Bundle\\RadBundle\\Composer\\ScriptHandler::clearCache",
+        ]
+    },
+
     "autoload": {
         "psr-0": { "Knp\\Bundle\\RadBundle": "" }
     },
